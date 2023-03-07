@@ -1,9 +1,11 @@
 #include "MIDIUSB.h"
 
+//midi defaults
 const byte channel = 2; 
-const byte TOTAL_BUTTONS = 16;
 const byte onValocity = 100;
 const byte offValocity = 0;
+
+const byte TOTAL_BUTTONS = 16;
 // All the Arduino pins used for buttons, in order.
 const byte BUTTONS_PIN[TOTAL_BUTTONS] = {A3, A2, A1, A0, 15, 14, 16, 10, 9, 8, 7, 6, 5, 4, 3, 2};
 // Every pitch corresponding to every Arduino pin. Each note has an associated numeric pitch (frequency scale).
@@ -34,6 +36,7 @@ void setup() {
 
 // The loop function runs over and over again forever
 void loop() {
+  //pretend to listeen
   MidiUSB.read();
 
   for (byte i = 0; i < TOTAL_BUTTONS; i++) {
